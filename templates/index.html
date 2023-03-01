@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+
+
+
+<div class="upload-container">
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Upload Plant
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+                <h4>Preview</h4>
+                <img id="preview-image" src="" alt="Plant preview" width='50%' height='50%'>
+                
+            </div>
+        </div>
+        <div>
+            
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+    
+    
+    <div class="loader" style="display:none;"></div>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+    <br>
+    <h4 id="description">
+        <span> </span>
+    </h4>
+    <br>
+    <h4 id="treatment">
+        <span> </span>
+    </h4>
+
+</div>
+
+{% endblock %}
