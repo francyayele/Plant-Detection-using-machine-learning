@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <title>Portfolio We</title>
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Leaf<span>Check</span></a>
+        <div class="bx bx-menu" id="menu-icon" style="float: right;"></div>
+        <ul class="navlist">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#predict">Predict</a></li>
+          <li><a href="#about">About US</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          
+        </ul>
+      </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <h5>Hello, Users</h5>
+            <h1>Plant Disease Detection System</h1>
+            
+            <p>Our system uses advanced machine learning algorithms to accurately
+               detect and diagnose three plant types: tomato, potato, and pepper. 
+            Simply upload a photo of your plant, and our
+            system will provide a diagnosis within seconds.</p>
+            <div class="count">
+                <a href="#"><span>+20K</span>Trained image</a>
+                <a href="#"><span>94%</span>Accuracy</a>
+    
+            </div>
+         
+        </div>
+        <div class="home-img">
+            <img src="aa.png">
+
+        </div>
+
+    </section>
+    <section class="predict" id="predict">
+        <div class="predict-container">
+          <h3>PREDICT PLANT DISEASE</h3>
+          <form id="predict-form">
+            <div class="form-group">
+              <form>
+                <label for="file-upload" class="btn">Upload Plant Image</label>
+                <input id="file-upload" type="file" style="display:none" />
+              </form>
+            </div>
+            <div class="form-group">
+              </div>
+            <button type="submit" class="btn">Predict</button>
+          </form>
+        </div>
+        <div class="predict-preview">
+          <h4>Preview</h4>
+          <img id="preview-image" src="" alt="Plant preview">
+          <div id="prediction-result"></div>
+        </div>
+      </section>
+
+      
+ 
+ <section class="about" id="about">
+    <div class="about-img">
+        <img src="Group 124.png" alt="">
+    </div>
+    <div class="about-text">
+        <h3>ABOUT US</h3>
+        
+        <p>Our team is composed  of diffret department We have years of experience in the
+            field of disease detection and are dedicated to providing
+            accurate and reliable diagnoses to individuals and healthcare
+            providers. We strive to constantly improve and update our
+            platform to ensure the best possible results.</p> 
+       
+        <div class="main-btn">
+            <a href="#" class="btn"> Join Us</a>
+
+        </div>
+
+    </div>
+    
+ </section>
+ 
+
+ <section class="contact" id="contact">
+    <div class="center">
+        <h3>Contact Us</h3>
+        <div class="contact-form">
+            <form action="mailto:francyayele@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your name"required>
+                <input type="email" name="email" placeholder="Email Address"required>
+                <textarea name="project_description" cols="30" rows="10" placeholder="comment"required></textarea>
+                <input type="submit" value="Send" class="send-btn" >
+            </form>
+
+            </div>
+
+        </div> 
+     </section>
+     <section class="footer">
+    
+        <h1 class="credit"> copyright @ 2023 LeafCheck, All rights Reserved. <br> <span> Created by IETPGR79 GRoup members</span></h1>
+    
+    </section>
+     <div class="copyright">
+        
+    </div>
+    
+	<script src="https://unpkg.com/scrollreveal"></script>
+    <script src="scripts.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+ 
+ </body>
+</html>
+
+<script>
+    // Get a reference to the file input element
+    const fileInput = document.querySelector('#file-upload');
+  
+    // Add an event listener to the file input element
+    fileInput.addEventListener('change', (event) => {
+      // Get the selected file from the event object
+      const file = event.target.files[0];
+  
+      // Create a new FileReader object
+      const reader = new FileReader();
+  
+      // Read the contents of the selected file as a data URL
+      reader.readAsDataURL(file);
+  
+      // Set the onload property of the FileReader object to a function that sets the src attribute of the preview image element to the file's data URL
+      reader.onload = () => {
+        const previewImage = document.querySelector('#preview-image');
+        previewImage.src = reader.result;
+      }
+    });
+  </script>
+
